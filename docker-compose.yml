@@ -1,0 +1,14 @@
+# docker-compose.yml for Legal Assistant App
+version: '3.8'
+services:
+  legal-assistant:
+    build: .
+    container_name: legal_assistant_app
+    volumes:
+      - ./legal_assistant_service:/app/legal_assistant_service
+    ports:
+      - "8000:8000"
+    environment:
+      - PYTHONUNBUFFERED=1
+    command: ["uvicorn", "legal_assistant_service.app:app", "--host", "0.0.0.0", "--port", "8000"]
+    restart: unless-stopped
