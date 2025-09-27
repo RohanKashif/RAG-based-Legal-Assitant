@@ -1,0 +1,12 @@
+# requirements.txt for legal assistant app
+pandas
+langchain
+langchain-google-genai
+langchain-community
+langgraph
+datasets
+chromadb
+sentence-transformers
+google-generativeai
+fastapi
+uvicorn[standard]
